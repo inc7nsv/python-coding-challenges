@@ -8,28 +8,31 @@
 «Player 1 won!» (если победил первый игрок) или
 «Player 2 won!» (если победил второй игрок).
 В случае ничьей следует вывести «Draw!».
-
-    if player_1 == player_2:
-        return "Draw!"
-
 """
 
 
 def rps(player_1: str, player_2:str) -> str:
+    """
+    Функция принимает значения ходов игры и выдает победителя
+    """
     moves = {
         "rock": "scissors",
         "scissors": "paper",
         "paper": "rock",
     }
 
+    # Если значения одинаковые
     if player_1 == player_2:
         return "Draw!"
 
+    # Если победил первый игрок
     if moves[player_1] == player_2:
         return "Player 1 won!"
 
+    # Если победил второй игрок
     else:
         return "Player 2 won!"
+
 
 if __name__ == "__main__":
     print(rps("rock", "scissors"))
